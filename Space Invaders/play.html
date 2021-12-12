@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+        <title>Space Invaders</title>
+    </head>
+    <body>
+        <div class="wrap">
+            <h1>Space Invaders</h1>
+            <div class = "game-wrapper">
+                <div class="main"></div>
+                <div class="lose p">
+                    <h1>GAME OVER</h1>
+                    <h2>Better luck next time!</h2>
+                    <button class="button" onclick="window.location.reload()">Restart</button>
+                </div>
+                <div class="win p">
+                    <h1>YOU WIN!</h1>
+                    <h2>Congratulations!</h2>
+                    <button class="button" onclick="window.location.reload()">Restart</button>
+                </div>
+            </div>
+            <script src ="main.js"></script>
+            <footer></footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+body {
+    height: 100%;
+    background-image: url("space.jpg_fit=scale") ;
+    overflow: hidden;
+    font: 16px sans-serif;
+    color: rgb(105, 155, 58);
+    background-color: rgb(49, 49, 49);
+}
+
+/*For main headings*/
+h1{
+    font-family: 'Orbitron', sans-serif;
+    color: white ;
+    text-align: center ;
+    font-size : 50px ;
+}
+
+/*For subheadings from the menu*/
+.h2{
+    font-family: 'Orbitron', sans-serif;
+    color: white ;
+    text-align: center ;
+    font-size: 30px;
+}
+
+.myProgress {
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    border-color:rgba(22, 25, 212, 0.904);
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 5px;
+    position: relative;
+}
+  
+.myProgress .myBar {
+    position: absolute;
+    height: 100%;
+    background-color: rgb(197, 25, 120);
+    animation: progress-animation 3s forwards;
+}
+
+@keyframes progress-animation{
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+
+/*Applying font to all ordinary text (text other headings and sub headings)*/
+.p{
+    font-family: 'Orbitron', sans-serif;
+    color: white ;
+}
+
+/*Background box for large bodies of text*/
+.text{
+    border-color:red;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 12px;
+    background-color: black;
+    padding: 10px;
+    margin: 10px;
+}
+
+/*To centralise elements*/
+.centre {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*For most buttons in the game*/
+.button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    padding: 3px
+}
+
+/*Special effect when user's cursor hovers over button*/
+.button:hover {
+    background-color: #484848; /*Grey*/
+    color: white;
+}
+  
+.wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+  
+.game-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.main {
+    width: 800px;
+    height: 600px;
+    background: url(background-blue.png);
+    animation: scroll-background 5s linear infinite;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+    position: relative;
+    z-index: -2;
+}
+  
+@keyframes scroll-background {
+    from {
+        background-position-y: 0px;
+    }
+    to {
+        background-position-y: 256px;
+    }
+}
+
+.main .laser {
+    position: absolute;
+    margin-left: -2.5px;
+    height: 25px;
+    /* Making lasers emerge from behind rocket*/
+    z-index: -1;
+}
+
+.main .enemyLaser {
+    position: absolute;
+    margin-left: -2.5px;
+    height: 20px;
+    /* Making lasers emerge from behind enemies*/
+    z-index: -1;
+}
+
+.main .enemy {
+    position: absolute;
+}
+
+.lose {
+    display: none;
+    position: absolute;
+    background: #dd1b1b;
+    color: white;
+    padding: 20px 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    animation: pop-in 1s;
+  }
+  
+  .win  {
+    display: none;
+    position: absolute;
+    background: #05c04d;
+    color: white;
+    padding: 20px 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    animation: pop-in 1s;
+  }

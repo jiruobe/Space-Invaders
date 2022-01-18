@@ -3,11 +3,7 @@ const KEY_LEFT = 37;
 const KEY_SPACE = 32;
 
 const GAME_WIDTH = 800;
-const GAME_HEIGHT = 600;
-
-var score = 0;
-document.getElementById("score").innerHTML = score;
-const ADD_TO_SCORE = 20;
+const GAME_HEIGHT = 500;
 
 const STATE = {
     x_pos : 0,
@@ -23,8 +19,13 @@ const STATE = {
     cooldown: 0,
     number_of_enemies: 16,
     enemy_cooldown: 0,
-    gameOver: false
+    gameOver: false 
 }
+
+// Initialize the Game
+const $container = document.querySelector(".main");
+createPlayer($container);
+createEnemies($container);
 
 // General purpose functions
 function setPosition($element, x, y) {
@@ -98,10 +99,12 @@ function createLaser($container, x, y){
 }
 
 function updateLaser($container){
+    var score = document.getElementById('score').innerHTML;
+    const ADD_TO_SCORE = 20;
     const lasers = STATE.lasers;
     for(let i = 0; i < lasers.length; i++){
-        const laser = lasers[i];
-        laser.y -= 2;
+          const laser = lasers[i];
+          laser.y -= 2;
         if (laser.y < 0){
             deleteLaser(lasers, laser, laser.$laser);
         }
@@ -109,15 +112,15 @@ function updateLaser($container){
         const laser_rectangle = laser.$laser.getBoundingClientRect();
         const enemies = STATE.enemies;
         for(let j = 0; j < enemies.length; j++){
-            const enemy = enemies[j];
-            const enemy_rectangle = enemy.$enemy.getBoundingClientRect();
-            if(collideRect(enemy_rectangle, laser_rectangle)){
-                deleteLaser(lasers, laser, laser.$laser);
-                const index = enemies.indexOf(enemy);
-                enemies.splice(index,1);
-                $container.removeChild(enemy.$enemy);
-                score += ADD_TO_SCORE
-            }
+        const enemy = enemies[j];
+        const enemy_rectangle = enemy.$enemy.getBoundingClientRect();
+        if(collideRect(enemy_rectangle, laser_rectangle)){
+          score += ADD_TO_SCORE;
+          deleteLaser(lasers, laser, laser.$laser);
+          const index = enemies.indexOf(enemy);
+          enemies.splice(index,1);
+          $container.removeChild(enemy.$enemy);
+        }
     
       }
     }
@@ -163,7 +166,7 @@ function updateEnemies($container){
     }
 }
 
-// For creating multiple rows of enemies
+// For creating muitliple rows of enemies
 function createEnemies($container) {
     for(var i = 0; i <= STATE.number_of_enemies/2; i++){
       createEnemy($container, i*80, 100);
@@ -239,14 +242,9 @@ function update(){
     }
 }
 
-// Initialize the Game
-const $container = document.querySelector(".main");
-createPlayer($container);
-createEnemies($container);
 
 // Key Press Event Listener
 window.addEventListener("keydown", KeyPress);
 window.addEventListener("keyup", KeyRelease);
-
 
 update();

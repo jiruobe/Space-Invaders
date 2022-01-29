@@ -13,6 +13,8 @@ h1{
     color: white ;
     text-align: center ;
     font-size : 50px ;
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
 
 /*For subheadings from the menu*/
@@ -21,6 +23,8 @@ h1{
     color: white ;
     text-align: center ;
     font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
 
 .myProgress {

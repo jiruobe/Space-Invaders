@@ -77,6 +77,7 @@ function updatePlayer(){
         STATE.x_pos -= 3;
     } if(STATE.move_right){
         STATE.x_pos += 3;
+    // Stops player from shooting too many lasers at one time    
     } if(STATE.shoot && STATE.cooldown == 0){
         createLaser($container, STATE.x_pos - STATE.spaceship_width/2, STATE.y_pos);
         STATE.cooldown = 30;
@@ -84,7 +85,7 @@ function updatePlayer(){
     const $player = document.querySelector(".player");
     setPosition($player, bound(STATE.x_pos), STATE.y_pos-15);
     
-    // Stops player from shooting too many lasers at one time 
+    //Countdown timer until next laser can be fired  
     if(STATE.cooldown > 0){
         STATE.cooldown -= 0.5
     }

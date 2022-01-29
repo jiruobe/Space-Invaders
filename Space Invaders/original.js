@@ -1,6 +1,6 @@
-const KEY_RIGHT = 39;//Assigning value to the 'right arrow' key 
-const KEY_LEFT = 37;//Assigning value to the 'left arrow' key
-const KEY_SPACE = 32; //Assigning value to the 'space' key
+const KEY_RIGHT = 39; //Creating constant for the 'right arrow' key 
+const KEY_LEFT = 37; //Creating constant for the 'left arrow' key
+const KEY_SPACE = 32; //Creating constant for the 'space' key
 
 const GAME_WIDTH = 800; // Making the game width 800px
 const GAME_HEIGHT = 600; //Making the game height 600px 

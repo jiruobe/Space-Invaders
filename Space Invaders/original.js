@@ -5,7 +5,7 @@ const KEY_SPACE = 32; //Creating constant for the 'space' key
 const GAME_WIDTH = 800; // Making the game width 800px
 const GAME_HEIGHT = 600; //Making the game height 600px 
 
-//Creating a dictionary called STATE that holds all the properties and their inital values when the game starts
+//Creating a dictionary called STATE that holds all the properties and their initial values when the game starts
 const STATE = {
     score: 0,  
     x_pos : 0,
